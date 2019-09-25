@@ -7,11 +7,19 @@ using UnityEngine.UI;
 public class Mobile_out : MonoBehaviour
 {
     public Button button;
+    public GameObject canvas;
+    [SerializeField] private Vector3 startPosition, movedPosition;
+    [SerializeField] private float animationTime;
+    private Hashtable iTweenArgs;
     // Start is called before the first frame update
     void Start()
     {
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        iTweenArgs = iTween.Hash();
+        iTweenArgs.Add("position", movedPosition);
+        iTweenArgs.Add("time", animationTime);
+        iTweenArgs.Add("islocal", true);
     }
 
     // Update is called once per frame
@@ -29,5 +37,6 @@ public class Mobile_out : MonoBehaviour
     void TaskOnClick()
     {
         Debug.Log("You have clicked the button!");
+        iTween.MoveTo(canvas, iTweenArgs);
     }
 }
