@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MessageManager : MonoBehaviour
 {
+
+    public Mobile_out mobilePressedButton;
     public string username;
 
     public int maxMessages = 25;
@@ -24,39 +26,43 @@ public class MessageManager : MonoBehaviour
 
     void Update()
     {
-        if(chatBox.text != "")
+        if(mobilePressedButton.pressButton)
         {
-            if(Input.GetKeyDown(KeyCode.Return))
+            if (chatBox.text != "")
             {
-                if(chatBox.text == "open")
+                if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.info);
-                    chatBox.text = "";
-                    SendMessageToChat("1919", Message.MessageType.replyMessage);
-                }
-                else
-                {
-                    SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
-                    chatBox.text = "";
-                    SendMessageToChat("Wrong message", Message.MessageType.replyMessage);
-                }
-                
-            }
-        }
-        else
-        {
-            if (!chatBox.isFocused && Input.GetKeyDown(KeyCode.Return))
-                chatBox.ActivateInputField();
-        }
+                    if (chatBox.text == "open")
+                    {
+                        SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.info);
+                        chatBox.text = "";
+                        SendMessageToChat("1919", Message.MessageType.replyMessage);
+                    }
+                    else
+                    {
+                        SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
+                        chatBox.text = "";
+                        SendMessageToChat("Wrong message", Message.MessageType.replyMessage);
+                    }
 
-        if(!chatBox.isFocused)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+                }
+            }
+            else
             {
-                SendMessageToChat("You pressed the space bar", Message.MessageType.info);
-                Debug.Log("Space");
+                if (!chatBox.isFocused && Input.GetKeyDown(KeyCode.Return))
+                    chatBox.ActivateInputField();
+            }
+
+            if (!chatBox.isFocused)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SendMessageToChat("You pressed the space bar", Message.MessageType.info);
+                    Debug.Log("Space");
+                }
             }
         }
+        
         
             
     }

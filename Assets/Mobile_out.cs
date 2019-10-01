@@ -21,6 +21,7 @@ public class Mobile_out : MonoBehaviour
         iTweenArgs.Add("position", movedPosition);
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
+        pressButton = false;
     }
 
     // Update is called once per frame
