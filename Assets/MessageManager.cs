@@ -12,7 +12,7 @@ public class MessageManager : MonoBehaviour
     public GameObject chatPanel, textObject;
     public InputField chatBox;
 
-    public Color playerMessage, info;
+    public Color playerMessage, replyMessage, info;
 
     [SerializeField]
     List<Message> messageList = new List<Message>();
@@ -28,8 +28,19 @@ public class MessageManager : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Return))
             {
-                SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
-                chatBox.text = "";
+                if(chatBox.text == "open")
+                {
+                    SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.info);
+                    chatBox.text = "";
+                    SendMessageToChat("1919", Message.MessageType.replyMessage);
+                }
+                else
+                {
+                    SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
+                    chatBox.text = "";
+                    SendMessageToChat("Wrong message", Message.MessageType.replyMessage);
+                }
+                
             }
         }
         else
@@ -65,6 +76,9 @@ public class MessageManager : MonoBehaviour
         newMessage.textObject = newText.GetComponent<Text>();
         newMessage.textObject.text = newMessage.text;
 
+        if(messageType == Message.MessageType.replyMessage)
+            newMessage.textObject.alignment = TextAnchor.UpperLeft;
+
         newMessage.textObject.color = MessageTypeColor(messageType);
 
         messageList.Add(newMessage);
@@ -78,6 +92,9 @@ public class MessageManager : MonoBehaviour
         {
             case Message.MessageType.playerMessage:
                 color = playerMessage;
+                break;
+            case Message.MessageType.replyMessage:
+                color = replyMessage;
                 break;
             
         }
@@ -95,6 +112,7 @@ public class Message
     public enum MessageType
     {
         playerMessage,
+        replyMessage,
         info
     }
 }

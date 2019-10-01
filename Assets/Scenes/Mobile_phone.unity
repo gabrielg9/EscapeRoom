@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1708082352}
   m_HandleRect: {fileID: 1708082351}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1497,7 +1497,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188040812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000000034924}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000000001397}
   m_LocalScale: {x: 1, y: 0.931, z: 1}
   m_Children:
   - {fileID: 1251559508}
@@ -1506,8 +1506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.0000037253, y: 170.76064}
-  m_SizeDelta: {x: -0.000022888, y: 0}
+  m_AnchoredPosition: {x: -0.000030518, y: 170.7606}
+  m_SizeDelta: {x: -0.68621, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1188040814
 MonoBehaviour:
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120909609}
   m_HandleRect: {fileID: 120909608}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1715,11 +1715,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 144
     m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1743,8 +1743,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251559505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.60079134, y: 0.5689172, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9478685, y: 0.5689172, z: 1}
   m_Children: []
   m_Father: {fileID: 1188040813}
   m_RootOrder: 0
@@ -1752,7 +1752,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 116.78, y: 0}
+  m_SizeDelta: {x: 97.46, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1708082350
 GameObject:
@@ -2033,6 +2033,7 @@ MonoBehaviour:
   textObject: {fileID: 1251559505}
   chatBox: {fileID: 560167680}
   playerMessage: {r: 0.6981132, g: 0.6026166, b: 0.6026166, a: 1}
+  replyMessage: {r: 0.18111429, g: 0.6981132, b: 0.33849132, a: 1}
   info: {r: 0.68842864, g: 0.68284976, b: 0.8773585, a: 1}
   messageList: []
 --- !u!4 &2085231572

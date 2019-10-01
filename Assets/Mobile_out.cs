@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Mobile_out : MonoBehaviour
 {
     public Button button;
+    public bool pressButton;
     public GameObject canvas;
     [SerializeField] private Vector3 startPosition, movedPosition;
     [SerializeField] private float animationTime;
@@ -38,5 +39,6 @@ public class Mobile_out : MonoBehaviour
     {
         Debug.Log("You have clicked the button!");
         iTween.MoveTo(canvas, iTweenArgs);
+        pressButton = true;
     }
 }
