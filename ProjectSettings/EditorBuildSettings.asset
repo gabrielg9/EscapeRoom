@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Book_on_table.unity
     guid: d3f5912676a6d8b4fa852d1305cd3814
+  - enabled: 1
+    path: Assets/Scenes/Crossword.unity
+    guid: 8644110fd2f4b8d4abea3902baaa9d6d
   m_configObjects: {}
