@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chair : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Chair : MonoBehaviour
     [SerializeField] private float animationTime;
     [SerializeField] private Vector3 rotation, rotationBack;
     private Hashtable iTweenArgs;
+
+    private int count = 0;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class Chair : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         onTrigger = false;
+        count = 0;
     }
 
     void Update()
@@ -35,9 +39,17 @@ public class Chair : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                iTweenArgs["position"] = movedPosition;
-                iTweenArgs["rotation"] = rotation;
-                moveChair();
+                count++;
+                if(count == 1)
+                {
+                    iTweenArgs["position"] = movedPosition;
+                    iTweenArgs["rotation"] = rotation;
+                    moveChair();
+                }              
+                else if(count > 1)
+                {
+                    SceneManager.LoadScene("Crossword");
+                }
             }
         }
         else
