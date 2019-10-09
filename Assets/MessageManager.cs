@@ -36,13 +36,13 @@ public class MessageManager : MonoBehaviour
                     {
                         SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.info);
                         chatBox.text = "";
-                        SendMessageToChat("1919", Message.MessageType.replyMessage);
+                        SendMessageToChat("AGH założono w 1919 roku.", Message.MessageType.replyMessage);
                     }
                     else
                     {
                         SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                         chatBox.text = "";
-                        SendMessageToChat("Wrong message", Message.MessageType.replyMessage);
+                        SendMessageToChat("Wiadomość niepoprawna", Message.MessageType.replyMessage);
                     }
 
                 }
@@ -57,7 +57,7 @@ public class MessageManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    SendMessageToChat("You pressed the space bar", Message.MessageType.info);
+                    SendMessageToChat("Nacisnąłeś spację", Message.MessageType.info);
                     Debug.Log("Space");
                 }
             }

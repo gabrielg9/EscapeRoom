@@ -32,7 +32,7 @@ public class Mobile_out : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Box(new Rect(0, 0, 200, 25), "Press 'Esc' to return to room");
+        GUI.Box(new Rect(0, 0, 220, 25), "Naciśnij 'Esc' by wrócić do pokoju");
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene("EscapeRoom");
     }

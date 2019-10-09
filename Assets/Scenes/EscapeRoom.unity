@@ -8302,7 +8302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use WASD buttons and mouse to walk around the room
+  m_Text: "U\u017Cywaj WASD oraz myszy do poruszania si\u0119 po pokoju. "
 --- !u!222 &1301590527
 CanvasRenderer:
   m_ObjectHideFlags: 0

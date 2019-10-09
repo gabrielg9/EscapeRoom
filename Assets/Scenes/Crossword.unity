@@ -4087,7 +4087,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Password: '
+  m_Text: "Has\u0142o: "
 --- !u!222 &1708789693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5183,7 +5183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crossword
+  m_Text: "Krzy\u017C\xF3wka"
 --- !u!222 &2045567592
 CanvasRenderer:
   m_ObjectHideFlags: 0

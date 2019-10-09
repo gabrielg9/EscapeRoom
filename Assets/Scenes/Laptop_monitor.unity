@@ -681,10 +681,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 139030, guid: d0248a83a6387d54b8bc76f0734c779b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 445096, guid: d0248a83a6387d54b8bc76f0734c779b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4500003
@@ -752,6 +748,10 @@ PrefabInstance:
     - target: {fileID: 413488, guid: d0248a83a6387d54b8bc76f0734c779b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.674
+      objectReference: {fileID: 0}
+    - target: {fileID: 139030, guid: d0248a83a6387d54b8bc76f0734c779b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108042, guid: d0248a83a6387d54b8bc76f0734c779b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Password:'
+  m_Text: "Has\u0142o:"
 --- !u!222 &1170538432
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter a password
+  m_Text: "Wprowad\u017A has\u0142o"
 --- !u!222 &1270711758
 CanvasRenderer:
   m_ObjectHideFlags: 0

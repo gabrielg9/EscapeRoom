@@ -47,7 +47,7 @@ public class Laptop_login_out : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Box(new Rect(0, 0, 200, 25), "Press 'Esc' to return to room");
+        GUI.Box(new Rect(0, 0, 220, 25), "Naciśnij 'Esc' by wrócić do pokoju");
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene("EscapeRoom");
     }
@@ -69,7 +69,7 @@ public class Laptop_login_out : MonoBehaviour
                 Debug.Log("haslo niepoprawne");
                 maskIndex = 0;
                 MaskOutput.text = maskArray[maskIndex];
-                textDisplay.GetComponent<Text>().text = "The password is incorrect. Try again";
+                textDisplay.GetComponent<Text>().text = "Hasło nieprawidłowe. Spróbuj ponownie";
             }
         }
         if (Input.GetMouseButton(0))
