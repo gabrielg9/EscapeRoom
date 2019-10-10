@@ -49,7 +49,7 @@ public class Keypad : MonoBehaviour
         {
             if(onTrigger)
             {
-                GUI.Box(new Rect(0, 0, 200, 25), "Press 'E' to open keypad");
+                GUI.Box(new Rect(0, 0, 220, 25), "Naciśnij 'E' by otworzyć szyfrator");
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     keypadScreen = true;
