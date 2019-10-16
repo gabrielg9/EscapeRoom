@@ -12,6 +12,7 @@ public class Laptop_login_out : MonoBehaviour
     public Text MaskOutput;
     public GameObject textDisplay;
     public Image desktop_image;
+    public Text textImage;
     
 
 
@@ -25,6 +26,7 @@ public class Laptop_login_out : MonoBehaviour
             mask = mask + "*";
         }
         desktop_image.enabled = false;
+        textImage.enabled = false;
     }
     public void MaskPassword()
     {
@@ -63,6 +65,7 @@ public class Laptop_login_out : MonoBehaviour
             {
                 Debug.Log("haslo poprawne");
                 desktop_image.enabled = true;
+                textImage.enabled = true;
             }
             else
             {

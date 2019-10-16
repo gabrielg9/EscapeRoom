@@ -32,7 +32,7 @@ public class MessageManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    if (chatBox.text == "open")
+                    if (chatBox.text == "studiowanie2019")
                     {
                         SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.info);
                         chatBox.text = "";
@@ -42,7 +42,7 @@ public class MessageManager : MonoBehaviour
                     {
                         SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                         chatBox.text = "";
-                        SendMessageToChat("Wiadomość niepoprawna", Message.MessageType.replyMessage);
+                        SendMessageToChat("Wiadomość niepoprawna, podaj hasło krzyżówki", Message.MessageType.replyMessage);
                     }
 
                 }
