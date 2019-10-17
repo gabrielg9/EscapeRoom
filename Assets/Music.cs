@@ -5,6 +5,7 @@ using UnityEngine;
 public class Music : MonoBehaviour
 {
     public bool onTrigger;
+    public bool listened = false;
     private AudioSource audioClip;
     
     void OnTriggerEnter(Collider other)
@@ -32,6 +33,7 @@ public class Music : MonoBehaviour
             {
                 audioClip = gameObject.GetComponent<AudioSource>();
                 audioClip.Play();
+                listened = true;
             }
         }
     }

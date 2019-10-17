@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class student_card : MonoBehaviour
 {
+    public GameObject Carpet;
+    public GameObject Radio;
     public bool onTrigger;
+    [SerializeField] private Vector3 startPosition, movedPosition;
+    [SerializeField] private float animationTime;
+    private Hashtable iTweenArgs;
+
+    public bool listenedFlag = false;
+
+    private bool movedCarpet = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -17,22 +26,41 @@ public class student_card : MonoBehaviour
     }
     void Start()
     {
-        
+        iTweenArgs = iTween.Hash();
+        iTweenArgs.Add("time", animationTime);
+        iTweenArgs.Add("islocal", true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        listenedFlag = Radio.GetComponent<Music>().listened;
         if(onTrigger)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(listenedFlag)
             {
-                Camera.main.fieldOfView = 30.0f;
+                if (movedCarpet)
+                    if (Input.GetKeyDown(KeyCode.R))
+                        Camera.main.fieldOfView = 20.0f;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    iTweenArgs["position"] = movedPosition;
+                    moveCarpet();
+                    movedCarpet = true;
+
+                }
             }
+            
         }
         else
         {
             Camera.main.fieldOfView = 60.0f;
         }
+    }
+
+    private void moveCarpet()
+    {
+        iTween.MoveTo(Carpet, iTweenArgs);
     }
 }
