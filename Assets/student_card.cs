@@ -48,7 +48,7 @@ public class student_card : MonoBehaviour
                     iTweenArgs["position"] = movedPosition;
                     moveCarpet();
                     movedCarpet = true;
-
+                    
                 }
             }
             
