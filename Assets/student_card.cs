@@ -14,6 +14,8 @@ public class student_card : MonoBehaviour
     public bool listenedFlag = false;
 
     private bool movedCarpet = false;
+    private bool popup = false;
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -40,15 +42,25 @@ public class student_card : MonoBehaviour
             if(listenedFlag)
             {
                 if (movedCarpet)
+                {
+
                     if (Input.GetKeyDown(KeyCode.R))
+                    {
                         Camera.main.fieldOfView = 20.0f;
+                        popup = false;
+                        //OnGUI();
+                    }
+                        
+                }
+                    
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     iTweenArgs["position"] = movedPosition;
                     moveCarpet();
                     movedCarpet = true;
-                    
+                    popup = true;
+
                 }
             }
             
@@ -56,7 +68,17 @@ public class student_card : MonoBehaviour
         else
         {
             Camera.main.fieldOfView = 60.0f;
+            
         }
+    }
+
+    private void OnGUI()
+    {
+        if (popup)
+        {
+            GUI.Box(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 15, 400, 30), "By powiększyć legitymację, naciśnij klawisz 'R'");
+        }
+
     }
 
     private void moveCarpet()

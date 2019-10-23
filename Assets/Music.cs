@@ -7,6 +7,7 @@ public class Music : MonoBehaviour
     public bool onTrigger;
     public bool listened = false;
     private AudioSource audioClip;
+    private bool popup = false;
     
     void OnTriggerEnter(Collider other)
     {
@@ -31,10 +32,26 @@ public class Music : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                popup = true;
                 audioClip = gameObject.GetComponent<AudioSource>();
                 audioClip.Play();
                 listened = true;
             }
         }
+        else
+        {
+            popup = false;
+            //audioClip.Stop();
+        }
+            
+    }
+
+    private void OnGUI()
+    {
+        if (popup)
+        {
+            GUI.Box(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 15, 400, 30), "Upewnij się, że masz włączone głośniki lub podpięte słuchawki");
+        }
+
     }
 }
