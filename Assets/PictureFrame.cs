@@ -12,7 +12,8 @@ public class PictureFrame : MonoBehaviour
 
     void Start()
     {
-        
+        Image1.enabled = false;
+        Image2.enabled = false;
     }
 
     // Update is called once per frame
