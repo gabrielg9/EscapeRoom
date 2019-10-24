@@ -8,6 +8,8 @@ public class PictureFrame : MonoBehaviour
     public GameObject machine;
     public Image Image1;
     public Image Image2;
+    public Text text1;
+    public Text text2;
     private bool metalStretched = false;
 
     void Start()
@@ -24,6 +26,8 @@ public class PictureFrame : MonoBehaviour
         {
             Image1.enabled = true;
             Image2.enabled = true;
+            text1.enabled = true;
+            text2.enabled = true;
         }
     }
 }
