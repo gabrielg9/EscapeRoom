@@ -6,6 +6,7 @@ public class LightSwitcher : MonoBehaviour
 {
     public GameObject Switcher;
     public GameObject Light;
+    public GameObject Wall;
     private Light light;
     public bool onTrigger;
     private bool switched = false;
@@ -42,11 +43,13 @@ public class LightSwitcher : MonoBehaviour
                 {
                     iTweenArgs["rotation"] = rotation;
                     light.enabled = true;
+                    Wall.SetActive(false);
                 }
                 else
                 {
                     iTweenArgs["rotation"] = returnRotation;
                     light.enabled = false;
+                    Wall.SetActive(true);
                 }
                     
                 switchLight();
