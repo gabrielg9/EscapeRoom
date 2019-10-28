@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Machine : MonoBehaviour
 {
-    public bool streched = false;
+    public bool stretched = false;
     private bool pressed = false;
     public GameObject Button;
     public Canvas canvas;
 
-    [SerializeField] private Vector3 position1, position2, position3, position4, position5, scale, position6;
+    [SerializeField] private Vector3 position1, position2, position3, position4, position5, scale, position6, pagePosition;
     [SerializeField] private float animationTime;
     private Hashtable iTweenArgs1;
     private Hashtable iTweenArgs2;
@@ -17,6 +17,7 @@ public class Machine : MonoBehaviour
     private Hashtable iTweenArgs4;
     private Hashtable iTweenArgs5;
     private Hashtable iTweenArgs6;
+    private Hashtable iTweenArgs7;
 
     public GameObject cube1;
     public GameObject cylinder1;
@@ -24,6 +25,7 @@ public class Machine : MonoBehaviour
     public GameObject cube3;
     public GameObject cube4;
     public GameObject metal;
+    public GameObject page;
 
     void Start()
     {
@@ -51,6 +53,10 @@ public class Machine : MonoBehaviour
         iTweenArgs6 = iTween.Hash();
         iTweenArgs6.Add("time", animationTime);
         iTweenArgs6.Add("islocal", true);
+
+        iTweenArgs7 = iTween.Hash();
+        iTweenArgs7.Add("time", animationTime);
+        iTweenArgs7.Add("islocal", true);
     }
 
     // Update is called once per frame
@@ -60,8 +66,8 @@ public class Machine : MonoBehaviour
         if(pressed)
         {
             moveElements();
-            streched = true;
-            if (streched)
+            stretched = true;
+            if (stretched)
             {
                 canvas.enabled = true;
             }
@@ -90,5 +96,13 @@ public class Machine : MonoBehaviour
         iTweenArgs6["position"] = position6;
         iTween.ScaleTo(metal, iTweenArgs6);
         iTween.MoveTo(metal, iTweenArgs6);
+
+    }
+
+    public void printChart()
+    {
+        Debug.Log("wydrukowano");
+        iTweenArgs7["position"] = pagePosition;
+        iTween.MoveTo(page, iTweenArgs7);
     }
 }

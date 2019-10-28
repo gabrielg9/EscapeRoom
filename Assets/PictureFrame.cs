@@ -21,7 +21,7 @@ public class PictureFrame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        metalStretched = machine.GetComponent<Machine>().streched;
+        metalStretched = machine.GetComponent<Machine>().stretched;
         if(metalStretched)
         {
             Image1.enabled = true;
