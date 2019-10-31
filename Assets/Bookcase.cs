@@ -6,6 +6,7 @@ public class Bookcase : MonoBehaviour
 {
     public bool onTrigger;
     public GameObject Book;
+    public Canvas textCode;
     private bool isMoved;
     [SerializeField] private Vector3 startPosition, movedPosition, endPosition;
     [SerializeField] private float animationTime;
@@ -28,6 +29,7 @@ public class Bookcase : MonoBehaviour
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
         isMoved = false;
+        textCode.enabled = false;
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class Bookcase : MonoBehaviour
                     iTweenArgs["position"] = movedPosition;
                     iTweenArgs["rotation"] = rotation;
                     moveAndRotate();
+                    textCode.enabled = true;
                 }
                 isMoved = !isMoved;
             } 
@@ -54,6 +57,7 @@ public class Bookcase : MonoBehaviour
                 iTweenArgs["position"] = endPosition;
                 iTweenArgs["rotation"] = endRotation;
                 moveAndRotate();
+                textCode.enabled = false;
             }
         }
     }
