@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bookcase : MonoBehaviour
 {
     public bool onTrigger;
-    public bool test;
     public GameObject Book;
     private bool isMoved;
     [SerializeField] private Vector3 startPosition, movedPosition, endPosition;
@@ -16,7 +15,6 @@ public class Bookcase : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;
-        test = false;
     }
 
     void OnTriggerExit(Collider other)
@@ -26,7 +24,6 @@ public class Bookcase : MonoBehaviour
 
     void Start()
     {
-        test = true;
         iTweenArgs = iTween.Hash();
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
@@ -36,7 +33,6 @@ public class Bookcase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (onTrigger)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -44,15 +40,12 @@ public class Bookcase : MonoBehaviour
                 isMoved = false;
                 if (isMoved == false)
                 {
-                iTweenArgs["position"] = movedPosition;
-                iTweenArgs["rotation"] = rotation;
-                moveAndRotate();
-                    //Debug.Log("nie ma");
+                    iTweenArgs["position"] = movedPosition;
+                    iTweenArgs["rotation"] = rotation;
+                    moveAndRotate();
                 }
                 isMoved = !isMoved;
-            }
-            
-            
+            } 
         }
         else
         {
@@ -61,16 +54,8 @@ public class Bookcase : MonoBehaviour
                 iTweenArgs["position"] = endPosition;
                 iTweenArgs["rotation"] = endRotation;
                 moveAndRotate();
-                //isMoved = false;
-                test = false;
             }
-            
-            //Debug.Log("jest");
         }
-        
-
-        
-        
     }
 
     public void moveAndRotate()
