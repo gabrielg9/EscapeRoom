@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bookcase : MonoBehaviour
 {
     public bool onTrigger;
-    public GameObject GameObject;
-    private bool isMoved = false;
+    public bool test;
+    public GameObject Book;
+    private bool isMoved;
     [SerializeField] private Vector3 startPosition, movedPosition, endPosition;
     [SerializeField] private float animationTime;
     [SerializeField] private Vector3 rotation, endRotation;
@@ -15,21 +16,21 @@ public class Bookcase : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;
+        test = false;
     }
 
     void OnTriggerExit(Collider other)
     {
         onTrigger = false;
     }
+
     void Start()
     {
-        
+        test = true;
         iTweenArgs = iTween.Hash();
-        //iTweenArgs.Add("position", movedPosition);
-        //iTweenArgs.Add("rotation", rotation);
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
-        onTrigger = false;
+        isMoved = false;
     }
 
     // Update is called once per frame
@@ -40,28 +41,42 @@ public class Bookcase : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (isMoved)
+                isMoved = false;
+                if (isMoved == false)
                 {
-                    iTweenArgs["position"] = endPosition;
-                    iTweenArgs["rotation"] = endRotation;
-                    Debug.Log("nie ma");
+                iTweenArgs["position"] = movedPosition;
+                iTweenArgs["rotation"] = rotation;
+                moveAndRotate();
+                    //Debug.Log("nie ma");
                 }
-                else
-                {
-                    iTweenArgs["position"] = movedPosition;
-                    iTweenArgs["rotation"] = rotation;
-                    Debug.Log("jest");
-                                        
-                }
-                
+                isMoved = !isMoved;
             }
-            isMoved = !isMoved;
-            iTween.MoveTo(GameObject, iTweenArgs);
-            iTween.RotateTo(GameObject, iTweenArgs);
+            
+            
+        }
+        else
+        {
+            if(isMoved )
+            {
+                iTweenArgs["position"] = endPosition;
+                iTweenArgs["rotation"] = endRotation;
+                moveAndRotate();
+                //isMoved = false;
+                test = false;
+            }
+            
+            //Debug.Log("jest");
         }
         
 
         
         
+    }
+
+    public void moveAndRotate()
+    {
+        iTween.MoveTo(Book, iTweenArgs);
+        iTween.RotateTo(Book, iTweenArgs);
+        isMoved = false;
     }
 }
