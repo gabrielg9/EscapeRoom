@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Application.Quit();
+        
     }
 
     void TaskOnClick()
