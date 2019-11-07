@@ -569,8 +569,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210, y: -32.5}
-  m_SizeDelta: {x: 1331, y: 577.1}
+  m_AnchoredPosition: {x: -215.1, y: -32.5}
+  m_SizeDelta: {x: 1313.5, y: 577.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103039457
 MonoBehaviour:
@@ -605,7 +605,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Uko\u0144czona gra jest prac\u0105 in\u017Cyniersk\u0105"
+  m_Text: "Uko\u0144czona gra jest owocem pracy in\u017Cynierkiej na kierunku Informatyka
+    Stosowana, Wydzia\u0142 In\u017Cynierii Metali i Informatyki Przemys\u0142owej.
+    \r\n\r\nTemat pracy in\u017Cynierskiej: Opracowanie i implementacja wirtualnego
+    pokoju zagadek z wykorzystaniem silnika graficznego Unity 3D.\r\n\nPromotor: dr
+    hab. in\u017C. Marcin Hojny\r\n\nTw\xF3rca: Gabriel Go\u0142da\r\n"
 --- !u!222 &1103039458
 CanvasRenderer:
   m_ObjectHideFlags: 0
