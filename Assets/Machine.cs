@@ -27,6 +27,9 @@ public class Machine : MonoBehaviour
     public GameObject metal;
     public GameObject page;
 
+    private AudioSource audioSource;
+    private int numberOfPrinting;
+
     void Start()
     {
         //canvas.enabled = false; 
@@ -57,6 +60,9 @@ public class Machine : MonoBehaviour
         iTweenArgs7 = iTween.Hash();
         iTweenArgs7.Add("time", animationTime);
         iTweenArgs7.Add("islocal", true);
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        numberOfPrinting = 0;
     }
 
     // Update is called once per frame
@@ -104,5 +110,8 @@ public class Machine : MonoBehaviour
         Debug.Log("wydrukowano");
         iTweenArgs7["position"] = pagePosition;
         iTween.MoveTo(page, iTweenArgs7);
+        if(numberOfPrinting == 0)
+            audioSource.Play();
+        numberOfPrinting++;
     }
 }

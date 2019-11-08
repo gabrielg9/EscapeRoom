@@ -14,6 +14,8 @@ public class LightSwitcher : MonoBehaviour
     [SerializeField] private float animationTime;
     private Hashtable iTweenArgs;
 
+    private AudioSource audioSource;
+
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;
@@ -29,6 +31,7 @@ public class LightSwitcher : MonoBehaviour
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
         light = Light.GetComponent<Light>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,5 +63,6 @@ public class LightSwitcher : MonoBehaviour
     private void switchLight()
     {
         iTween.RotateTo(Switcher, iTweenArgs);
+        audioSource.Play();
     }
 }

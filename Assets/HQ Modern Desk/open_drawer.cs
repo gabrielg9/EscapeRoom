@@ -12,12 +12,15 @@ public class open_drawer : MonoBehaviour
 
     public bool isOpen = false;
 
+    private AudioSource audioClip;
+
     void Start()
     {
         iTweenArgs = iTween.Hash();
         iTweenArgs.Add("position", openPosition);
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
+        audioClip = gameObject.GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,11 +45,12 @@ public class open_drawer : MonoBehaviour
                 else
                     iTweenArgs["position"] = openPosition;
 
+                audioClip.Play();
+
                 isOpen = !isOpen;
 
                 iTween.MoveTo(gameObject, iTweenArgs);
-                
-                
+
             }
         }
        
