@@ -9,7 +9,7 @@ public class Machine : MonoBehaviour
     public GameObject Button;
     public Canvas canvas;
 
-    [SerializeField] private Vector3 position1, position2, position3, position4, position5, scale, position6, pagePosition;
+    [SerializeField] private Vector3 position1, position2, position3, position4, position5, scale, scale2, position6, position7, pagePosition;
     [SerializeField] private float animationTime;
     private Hashtable iTweenArgs1;
     private Hashtable iTweenArgs2;
@@ -18,6 +18,7 @@ public class Machine : MonoBehaviour
     private Hashtable iTweenArgs5;
     private Hashtable iTweenArgs6;
     private Hashtable iTweenArgs7;
+    private Hashtable iTweenArgs8;
 
     public GameObject cube1;
     public GameObject cylinder1;
@@ -25,10 +26,13 @@ public class Machine : MonoBehaviour
     public GameObject cube3;
     public GameObject cube4;
     public GameObject metal;
+    public GameObject metal2;
     public GameObject page;
 
     private AudioSource audioSource;
     private int numberOfPrinting;
+
+    private int count;
 
     void Start()
     {
@@ -61,8 +65,16 @@ public class Machine : MonoBehaviour
         iTweenArgs7.Add("time", animationTime);
         iTweenArgs7.Add("islocal", true);
 
+        iTweenArgs8 = iTween.Hash();
+        iTweenArgs8.Add("time", animationTime);
+        iTweenArgs8.Add("islocal", true);
+
         audioSource = gameObject.GetComponent<AudioSource>();
         numberOfPrinting = 0;
+
+        metal.GetComponent<MeshRenderer>().enabled = true;
+        metal2.GetComponent<MeshRenderer>().enabled = false;
+        count = 0;
     }
 
     // Update is called once per frame
@@ -102,6 +114,28 @@ public class Machine : MonoBehaviour
         iTweenArgs6["position"] = position6;
         iTween.ScaleTo(metal, iTweenArgs6);
         iTween.MoveTo(metal, iTweenArgs6);
+
+        iTweenArgs8["scale"] = scale2;
+        iTweenArgs8["position"] = position7;
+        iTween.ScaleTo(metal2, iTweenArgs8);
+        iTween.MoveTo(metal2, iTweenArgs8);
+        Changemetal();
+
+    }
+
+    private void Changemetal()
+    {
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.1f);
+        metal.GetComponent<MeshRenderer>().enabled = false;
+        metal2.GetComponent<MeshRenderer>().enabled = true;
+        if(count == 0)
+            metal2.GetComponent<AudioSource>().Play();
+        count++;
 
     }
 
