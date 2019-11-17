@@ -15,7 +15,17 @@ public class student_card : MonoBehaviour
 
     private bool movedCarpet = false;
     private bool popup = false;
-    
+
+    public static student_card instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -68,7 +78,7 @@ public class student_card : MonoBehaviour
         else
         {
             Camera.main.fieldOfView = 60.0f;
-            
+            popup = false;
         }
     }
 

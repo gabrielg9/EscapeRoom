@@ -12,6 +12,17 @@ public class machineButton : MonoBehaviour
     [SerializeField] private float animationTime;
     private Hashtable iTweenArgs;
 
+    public static machineButton instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;

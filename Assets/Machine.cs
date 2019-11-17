@@ -34,6 +34,17 @@ public class Machine : MonoBehaviour
 
     private int count;
 
+    public static Machine instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void Start()
     {
         //canvas.enabled = false; 

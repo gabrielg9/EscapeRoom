@@ -11,7 +11,18 @@ public class Music : MonoBehaviour
     private bool popup = false;
     public GameObject musicCarpet;
     private int count;
-    
+
+    public static Music instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;

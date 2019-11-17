@@ -16,6 +16,17 @@ public class LightSwitcher : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public static LightSwitcher instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;

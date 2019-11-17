@@ -11,8 +11,17 @@ public class pillow_up : MonoBehaviour
     [SerializeField] private Vector3 rotation;
     private Hashtable iTweenArgs;
     private bool moved = false;
-    private bool phone = false;
-    public GameObject FPSController;
+    public bool phone = false;
+    public static pillow_up instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
     void Start()
     {
@@ -49,7 +58,6 @@ public class pillow_up : MonoBehaviour
                     else
                     {
                         Debug.Log("phone");
-                        FPSController.GetComponent<SavingPosition>().Save();
                         SceneManager.LoadScene("Mobile_phone");
                     }
                     

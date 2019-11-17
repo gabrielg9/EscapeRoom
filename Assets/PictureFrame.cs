@@ -12,6 +12,17 @@ public class PictureFrame : MonoBehaviour
     public Text text2;
     private bool metalStretched = false;
 
+    public static PictureFrame instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void Start()
     {
         Image1.enabled = false;
