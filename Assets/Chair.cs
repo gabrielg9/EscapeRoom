@@ -13,6 +13,8 @@ public class Chair : MonoBehaviour
 
     private int count = 0;
 
+    public GameObject FPSController;
+
     void Start()
     {
         iTweenArgs = iTween.Hash();
@@ -48,6 +50,7 @@ public class Chair : MonoBehaviour
                 }              
                 else if(count > 1)
                 {
+                    FPSController.GetComponent<SavingPosition>().Save();
                     SceneManager.LoadScene("Crossword");
                 }
             }

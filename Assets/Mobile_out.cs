@@ -22,8 +22,6 @@ public class Mobile_out : MonoBehaviour
         iTweenArgs.Add("time", animationTime);
         iTweenArgs.Add("islocal", true);
         pressButton = false;
-
-        PlayerPrefs.SetString("finished", "MobileScene");
     }
 
     // Update is called once per frame

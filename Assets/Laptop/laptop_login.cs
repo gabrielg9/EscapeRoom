@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class laptop_login : MonoBehaviour
 {
     public bool onTrigger;
+    public GameObject FPSController;
     void OnTriggerEnter(Collider other)
     {
         onTrigger = true;
@@ -26,8 +27,8 @@ public class laptop_login : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
+                FPSController.GetComponent<SavingPosition>().Save();
                 SceneManager.LoadScene("Laptop_monitor");
-
             }
         }
     }

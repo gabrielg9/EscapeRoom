@@ -15,7 +15,7 @@ public class Book_out : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetString("finished", "BookScene");
+
     }
 
     // Update is called once per frame

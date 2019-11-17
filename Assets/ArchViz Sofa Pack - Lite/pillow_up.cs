@@ -12,6 +12,7 @@ public class pillow_up : MonoBehaviour
     private Hashtable iTweenArgs;
     private bool moved = false;
     private bool phone = false;
+    public GameObject FPSController;
 
     void Start()
     {
@@ -48,8 +49,8 @@ public class pillow_up : MonoBehaviour
                     else
                     {
                         Debug.Log("phone");
+                        FPSController.GetComponent<SavingPosition>().Save();
                         SceneManager.LoadScene("Mobile_phone");
-                        
                     }
                     
                 }

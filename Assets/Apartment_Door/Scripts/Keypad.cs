@@ -19,6 +19,12 @@ public class Keypad : MonoBehaviour
     public AudioSource openingDoor;
     private int count;
 
+    public GameObject fpsCamera;
+    //private float cameraRotation = 0;
+      
+
+
+
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();

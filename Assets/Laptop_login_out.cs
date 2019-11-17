@@ -18,8 +18,6 @@ public class Laptop_login_out : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetString("finished", "LaptopScene");
-
         maskArray[0] = "";
         string mask = "";
         for(int i=1; i<10; i++)
