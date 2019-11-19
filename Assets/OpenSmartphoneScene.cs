@@ -35,8 +35,9 @@ public class OpenSmartphoneScene : MonoBehaviour
         else
             counter = 0;
             
-        if(counter >= 1)
+        if(counter == 1)
         {
+            Debug.Log("zapisano");
             FPSController.GetComponent<SavingPosition>().Save();
         }
     }

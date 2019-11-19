@@ -12,6 +12,7 @@ public class pillow_up : MonoBehaviour
     private Hashtable iTweenArgs;
     private bool moved = false;
     public bool phone = false;
+    private int counter = 0;
     public static pillow_up instance = null;
 
     void Awake()
@@ -49,7 +50,7 @@ public class pillow_up : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if(phone == false)
+                    if (phone == false)
                     {
                         iTween.MoveTo(gameObject, iTweenArgs);
                         iTween.RotateTo(gameObject, iTweenArgs);
@@ -57,12 +58,18 @@ public class pillow_up : MonoBehaviour
                     }
                     else
                     {
+                        counter++;
                         Debug.Log("phone");
-                        SceneManager.LoadScene("Mobile_phone");
+                        if(counter == 2)
+                            SceneManager.LoadScene("Mobile_phone");
                     }
-                    
+
                 }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                    counter = 1;
             }
+            else
+                counter = 1;
         }
 
         
