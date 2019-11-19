@@ -101,7 +101,6 @@ public class Machine : MonoBehaviour
                 canvas.enabled = true;
             }
         }
-       
     }
 
     private void moveElements()
@@ -131,7 +130,6 @@ public class Machine : MonoBehaviour
         iTween.ScaleTo(metal2, iTweenArgs8);
         iTween.MoveTo(metal2, iTweenArgs8);
         Changemetal();
-
     }
 
     private void Changemetal()
@@ -147,7 +145,6 @@ public class Machine : MonoBehaviour
         if(count == 0)
             metal2.GetComponent<AudioSource>().Play();
         count++;
-
     }
 
     public void printChart()

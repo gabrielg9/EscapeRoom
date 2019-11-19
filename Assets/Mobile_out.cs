@@ -12,6 +12,7 @@ public class Mobile_out : MonoBehaviour
     [SerializeField] private Vector3 startPosition, movedPosition;
     [SerializeField] private float animationTime;
     private Hashtable iTweenArgs;
+
     // Start is called before the first frame update
     void Start()
     {

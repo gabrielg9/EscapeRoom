@@ -31,7 +31,6 @@ public class open_drawer : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         onTrigger = false;
-       
     }
 
     void Update()
@@ -50,9 +49,7 @@ public class open_drawer : MonoBehaviour
                 isOpen = !isOpen;
 
                 iTween.MoveTo(gameObject, iTweenArgs);
-
             }
         }
-       
     }
 }

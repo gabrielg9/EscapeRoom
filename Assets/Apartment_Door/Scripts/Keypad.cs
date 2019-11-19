@@ -20,10 +20,6 @@ public class Keypad : MonoBehaviour
     private int count;
 
     public GameObject fpsCamera;
-    //private float cameraRotation = 0;
-      
-
-
 
     private void Start()
     {
@@ -141,7 +137,6 @@ public class Keypad : MonoBehaviour
                         audioSource.Play();
                         input = input.Remove(input.Length - 1);
                     }
-                    
                 }
             }
         }

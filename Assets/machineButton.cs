@@ -59,7 +59,6 @@ public class machineButton : MonoBehaviour
         iTweenArgs["position"] = position;
         iTween.MoveTo(button, iTweenArgs);
         StartCoroutine(Wait());
-        
     }
      IEnumerator Wait()
     {

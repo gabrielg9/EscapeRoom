@@ -13,8 +13,6 @@ public class Laptop_login_out : MonoBehaviour
     public GameObject textDisplay;
     public Image desktop_image;
     public Text textImage;
-    
-
 
     private void Start()
     {
@@ -57,7 +55,6 @@ public class Laptop_login_out : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(PasswordInput.text);
         if(Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log(PasswordInput.text);

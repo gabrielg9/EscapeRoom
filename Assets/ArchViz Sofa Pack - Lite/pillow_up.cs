@@ -63,7 +63,6 @@ public class pillow_up : MonoBehaviour
                         if(counter == 2)
                             SceneManager.LoadScene("Mobile_phone");
                     }
-
                 }
                 if (Input.GetKeyDown(KeyCode.Escape))
                     counter = 1;
@@ -71,9 +70,5 @@ public class pillow_up : MonoBehaviour
             else
                 counter = 1;
         }
-
-        
-       
-      
     }
 }

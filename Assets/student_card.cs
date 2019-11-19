@@ -53,16 +53,12 @@ public class student_card : MonoBehaviour
             {
                 if (movedCarpet)
                 {
-
                     if (Input.GetKeyDown(KeyCode.R))
                     {
                         Camera.main.fieldOfView = 20.0f;
                         popup = false;
-                        //OnGUI();
-                    }
-                        
-                }
-                    
+                    } 
+                }   
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -70,10 +66,8 @@ public class student_card : MonoBehaviour
                     moveCarpet();
                     movedCarpet = true;
                     popup = true;
-
                 }
             }
-            
         }
         else
         {
@@ -88,7 +82,6 @@ public class student_card : MonoBehaviour
         {
             GUI.Box(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 15, 400, 30), "By powiększyć legitymację, naciśnij klawisz 'R'");
         }
-
     }
 
     private void moveCarpet()

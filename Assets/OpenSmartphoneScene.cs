@@ -8,6 +8,7 @@ public class OpenSmartphoneScene : MonoBehaviour
     public bool onTrigger;
     public GameObject FPSController;
     public static int counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {

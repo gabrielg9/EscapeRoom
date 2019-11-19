@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MessageManager : MonoBehaviour
 {
-
     public Mobile_out mobilePressedButton;
     public string username;
 
@@ -44,7 +43,6 @@ public class MessageManager : MonoBehaviour
                         chatBox.text = "";
                         SendMessageToChat("Wiadomość niepoprawna, podaj hasło krzyżówki", Message.MessageType.replyMessage);
                     }
-
                 }
             }
             else
@@ -62,9 +60,6 @@ public class MessageManager : MonoBehaviour
                 }
             }
         }
-        
-        
-            
     }
 
     public void SendMessageToChat(string text, Message.MessageType messageType)
@@ -74,8 +69,7 @@ public class MessageManager : MonoBehaviour
             Destroy(messageList[0].textObject.gameObject);
             messageList.Remove(messageList[0]);
         }
-            
-
+        
         Message newMessage = new Message();
         newMessage.text = text;
         GameObject newText = Instantiate(textObject, chatPanel.transform);
@@ -102,7 +96,6 @@ public class MessageManager : MonoBehaviour
             case Message.MessageType.replyMessage:
                 color = replyMessage;
                 break;
-            
         }
         return color;
     }

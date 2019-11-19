@@ -64,8 +64,7 @@ public class LightSwitcher : MonoBehaviour
                     iTweenArgs["rotation"] = returnRotation;
                     light.enabled = false;
                     Wall.SetActive(true);
-                }
-                    
+                } 
                 switchLight();
             }
         }

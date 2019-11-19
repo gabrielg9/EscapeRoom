@@ -61,7 +61,6 @@ public class Chair : MonoBehaviour
             iTweenArgs["rotation"] = rotationBack;
             moveChair();
         }
-        
     }
 
     private void moveChair()

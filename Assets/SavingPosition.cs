@@ -5,6 +5,7 @@ using UnityEngine;
 public class SavingPosition : MonoBehaviour
 {
     public static int iterator = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,6 @@ public class SavingPosition : MonoBehaviour
     }
     public void Load()
     {
-        
         if (iterator != 0)
         {
             gameObject.GetComponent<CharacterController>().enabled = false;
@@ -22,7 +22,6 @@ public class SavingPosition : MonoBehaviour
             gameObject.GetComponent<CharacterController>().enabled = true;
         }
         gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
     }
     public void Save()
     {

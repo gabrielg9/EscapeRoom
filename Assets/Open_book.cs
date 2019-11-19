@@ -16,8 +16,6 @@ public class Open_book : MonoBehaviour
     {
         onTrigger = false;
     }
-
-    
     
     void Update()
     {
