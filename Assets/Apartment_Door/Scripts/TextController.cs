@@ -11,6 +11,8 @@ public class TextController : MonoBehaviour
     {
         LoadDescription();
         iterator++;
+        Debug.Log("ds");
+        Cursor.visible = true;
     }
 
     public void LoadDescription()
